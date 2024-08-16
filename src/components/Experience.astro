@@ -1,0 +1,34 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "Febrero - Julio 2024",
+    title: "SofticsLab",
+    description:
+      "Desarrollo de nuevos requerimientos para proyectos en producción de la empresa. Se trabajó con las tecnologías LARAVEL, VUE 3 y GitHub para un mayor control. ",
+  },
+  {
+    date: "Agosto - Diciembre 2023",
+    title: "Colegio Uniciencia",
+    description:
+      "Creación de un sistema de control de asistencias por medio de un código QR con las tecnologías HTML, JavaScript, CSS y PHP. También la personalización del CMS Moodle para gestión de los recursos de la institución. ",
+  },
+  {
+    date: "Enero - Julio 2023",
+    title: "APR Support",
+    description:
+      "Desarrollo de páginas estáticas con tecnologías como HTML, CSS y JavaScript según los requerimientos de los clientes. ",
+  },
+];
+---
+
+<ol class="relative z-10 border-s border-gray-200 ml-[10px]">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

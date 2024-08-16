@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import SocialPill from "../components/SocialPill.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import MailIcon from "../icons/Mail.astro";
+import Experience from "../components/Experience.astro";
+import BriefCase from "../icons/BriefCase.astro";
+import CodeIcon from "../icons/Code.astro";
+import DocumentIcon from "../icons/Document.astro";
+import Projects from "../components/Projects.astro";
+---
+
+<Layout
+  title="Portafolio de Luis Barra - Desarrollador Fullstack"
+  description="Contrátame - Disponibilidad Inmediata"
+>
+  <main class="px-4">
+    <SectionContainer class="pt-16 pb-16 lg:py-44" id="about">
+      <div class="flex flex-row gap-x-10 lg:gap-x-4 items-center">
+        <img
+          src="https://www.getillustrations.com/photos/pack/3d-avatar-male_lg.png"
+          class="rounded-full size-12 mb-2"
+          alt="foto de perfil"
+        />
+        <a
+          href="https://www.linkedin.com/in/luis-barra-barra-2133902b2/"
+          target="_blank"
+          class="flex justify-center items-center"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </div>
+
+      <h1
+        class="text-white text-3xl md:text-4xl xl:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hola! Soy Luis
+      </h1>
+      <p class="text-xl">
+        Desarrollador Web con <span class="text-xl text-sky-500">
+          Disponibilidad Inmmediata Para Trabajar.<br /></span
+        >
+        Soy de Perú 👋. Estoy Estudiando y Capacitandome Constantemente.
+      </p>
+      <nav class="flex flex-wrap gap-4 mt-8">
+          <SocialPill url="../../public/luis_barra.pdf"
+          class="bg-slate-600"
+          >
+            <DocumentIcon slot="icon" class="size-4 lg:size-6" />
+            <span slot="text">Ver CV</span>
+          </SocialPill>
+        
+        <SocialPill
+          url="https://www.linkedin.com/in/luis-barra-barra-2133902b2/"
+        >
+          <LinkedInIcon slot="icon" class="size-4 lg:size-6" />
+          <span slot="text">Linkedin</span>
+        </SocialPill>
+        <SocialPill url="https://github.com/giuy23">
+          <GitHubIcon slot="icon" class="size-4 lg:size-6" />
+          <span slot="text">Github</span>
+        </SocialPill>
+        <SocialPill url="mailto:luis4002a@gmail.com">
+          <MailIcon slot="icon" class="size-4 lg:size-6" />
+          <span slot="text">luis4002a@gmail.com</span>
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer class="pb-14 lg:pb-20" id="experience">
+      <h2 class="text-2xl font-semibold flex gap-x-3 items-center mb-6">
+        <BriefCase class="size-7" />
+        Experiencia
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="projects" class="pb-0 md:pb-22">
+      <h2 class="text-2xl font-semibold flex gap-x-3 items-center mb-6">
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+  </main>
+</Layout>
+
+<style></style>

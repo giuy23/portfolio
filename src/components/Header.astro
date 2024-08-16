@@ -1,0 +1,37 @@
+<header
+  class="flex justify-around lg:justify-center items-center py-5 w-full xl:w-[1120px] mx-auto relative"
+>
+  <nav
+    id="navbar"
+    class="p-2 text-wrap flex flex-row gap-x-4 text-center lg:gap-x-10 text-sm lg:text-lg font-semibold fixed top-2"
+  >
+    <a href="#about">Sobre Mí</a>
+    <a href="#experience">Experiencia</a>
+    <a href="#projects">Proyectos</a>
+    <a href="mailto:luis4002a@gmail.com">Contáctame</a>
+  </nav>
+</header>
+<script>
+  document.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar")!;
+    const scrollThreshold = 50;
+
+    if (window.scrollY > scrollThreshold) {
+      navbar.classList.add(
+        "bg-slate-900",
+        "rounded-md",
+        "text-sky-500",
+        "z-30"
+      );
+      navbar.classList.remove("bg-transparent");
+    } else {
+      navbar.classList.add("bg-transparent");
+      navbar.classList.remove(
+        "bg-slate-900",
+        "rounded-md",
+        "text-sky-500",
+        "z-30"
+      );
+    }
+  });
+</script>

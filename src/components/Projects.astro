@@ -1,0 +1,121 @@
+---
+import Tailwind from "../icons/Tailwind.astro";
+import Vue from "../icons/Vue.astro";
+import React from "../icons/React.astro";
+import Laravel from "../icons/Laravel.astro";
+import Supabase from "../icons/Supabase.astro";
+import LinkIcon from "../icons/Link.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+
+const TAGS = {
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-black text-white",
+    icon: Tailwind,
+  },
+  VUE: {
+    name: "Vue JS",
+    class: "bg-black text-white",
+    icon: Vue,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-black text-white",
+    icon: React,
+  },
+  LARAVEL: {
+    name: "Laravel",
+    class: "bg-black text-white",
+    icon: Laravel,
+  },
+  SUPABASE: {
+    name: "Supabase",
+    class: "bg-black text-white",
+    icon: Supabase,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Bloc de Notas",
+    description:
+      "Aplicación para poder guardar tus notas del día a día. Implementado con un editor de texto enriquerido, además de poder crear subtareas y clasificarlas por importancia. ",
+    link: "https://lupercal-notas.netlify.app/",
+    github: "https://github.com/giuy23/vue-notes",
+    image: "lupercal.jpg",
+    tags: [TAGS.VUE, TAGS.TAILWIND, TAGS.SUPABASE],
+  },
+  {
+    title: "Cetpro",
+    description:
+      "Sistema creado para una Institución Educativa cuya función es guardar los datos personales del estudiante para poder asignarles cursos y emitir pdfs con las notas que tienen en su rango académico. ",
+    github: "https://github.com/giuy23/cetpro",
+    image:
+      "cetpro.png",
+    tags: [TAGS.LARAVEL],
+  },
+  {
+    title: "Aplicación de blog",
+    description:
+      "Sistema para la publicación de posts, realizado con roles de usuarios y búsquedas y filtros por tags. ",
+    github: "https://github.com/giuy23/blog2",
+    image:
+      "blog.png",
+    tags: [TAGS.LARAVEL],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, tags, image, link, github }) => (
+    <article class="flex flex-col lg:flex-row gap-6 my-16 items-center">
+      <div class="w-full md:w-1/2">
+        <img
+          class="rounded shadow-2xl shadow-white/10"
+          src={`../../public/projects/${image}`}
+          alt={`Captura del proyecto ${title}`}
+        />
+      </div>
+
+      <div class="w-full md:w-1/2">
+        <h3 class="text-xl font-bold text-cyan-500">{title}</h3>
+        <ul class="flex  flex-row flex-wrap gap-2 py-3">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border rounded-md border-cyan-600`}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <p class="text-pretty text-sm">{description}</p>
+
+        <section class="flex flex-row gap-4 py-3 items-center">
+          {link && (
+            <a
+              href={link}
+              target="_blank"
+              class="flex items-center gap-x-2 rounded-lg text-base py-1 px-2 border border-white"
+            >
+              <LinkIcon class="size-6" />
+              Preview
+            </a>
+          )}
+          {github && (
+            <a
+              href={github}
+              target="_blank"
+              class="flex items-center gap-x-2 rounded-lg text-base py-1 px-2 border border-white"
+            >
+              <GitHubIcon class="size-6" />
+              GitHub
+            </a>
+          )}
+        </section>
+      </div>
+    </article>
+  ))
+}
