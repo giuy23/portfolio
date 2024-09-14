@@ -4,6 +4,7 @@ import Vue from "../icons/Vue.astro";
 import React from "../icons/React.astro";
 import Laravel from "../icons/Laravel.astro";
 import Supabase from "../icons/Supabase.astro";
+import MySQL from "../icons/MySQL.astro";
 import LinkIcon from "../icons/Link.astro";
 import GitHubIcon from "../icons/GitHub.astro";
 
@@ -33,9 +34,22 @@ const TAGS = {
     class: "bg-black text-white",
     icon: Supabase,
   },
+  MySQL: {
+    name: "MySQL",
+    class: 'bg-black text-white',
+    icon: MySQL
+  }
 };
 
 const PROJECTS = [
+  {
+    title: "Sistema de Gestión de Ventas",
+    description:
+      "Sistema de gestión de ventas. Implementado con módulos como roles, clientes, proveedores, productos, categorías, ventas al contado o crédito y caja diaria.",
+    github: "https://github.com/giuy23/sale_system",
+    image: "sale_system.png",
+    tags: [TAGS.VUE, TAGS.LARAVEL, TAGS.MySQL],
+  },
   {
     title: "Bloc de Notas",
     description:
@@ -57,7 +71,7 @@ const PROJECTS = [
   {
     title: "Aplicación de blog",
     description:
-      "Sistema para la publicación de posts, realizado con roles de usuarios y búsquedas y filtros por tags. ",
+      "Sistema para la publicación de posts. Realizado con roles de usuarios, búsquedas y filtros por tags. ",
     github: "https://github.com/giuy23/blog2",
     image:
       "blog.png",
