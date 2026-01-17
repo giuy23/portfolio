@@ -1,0 +1,18 @@
+---
+import { SKILLS } from "../utils/constans";
+---
+
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+  {
+    SKILLS.map((skill) => (
+      <div
+        class={`flex items-center flex-col justify-center p-4 rounded-lg border-sky-800 border-[1px] transform hover:scale-[1.01] transition`}
+      >
+        <skill.icon class="size-8" />
+        <span class="text-sm md:text-lg font-semibold text-center">
+          {skill.name}
+        </span>
+      </div>
+    ))
+  }
+</div>
